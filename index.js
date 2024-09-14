@@ -4,11 +4,12 @@ const mongoose = require("mongoose");
 const app = express();
 
 
+
 // connection
 // mongodb://localhost:27017/
 
 const url = 'mongodb://localhost:27017'; // default URL if MongoDB is on the same machine
-const dbName = 'musiconlysbb'; 
+const dbName = '/musiconlysbb'; 
 
 mongoose.connect(url+dbName)
 .then(()=>{
@@ -92,7 +93,9 @@ app.post("/api/allsong", async (req,res)=>{
         songlink : body.songlink,
     });
     console.log(result);
+
     return res.status(201).json({message:"success"});
+
 });
 
 
