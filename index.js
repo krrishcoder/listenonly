@@ -6,7 +6,11 @@ const app = express();
 
 // connection
 // mongodb://localhost:27017/
-mongoose.connect('mongodb://localhost:27017/demokkdb')
+
+const url = 'mongodb://localhost:27017'; // default URL if MongoDB is on the same machine
+const dbName = 'musiconlysbb'; 
+
+mongoose.connect(url+dbName)
 .then(()=>{
     console.log("mongoDB connected");
 }).catch(err =>{
