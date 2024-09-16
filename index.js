@@ -8,10 +8,9 @@ const app = express();
 // connection
 // mongodb://localhost:27017/
 
-const url = 'mongodb://localhost:27017'; // default URL if MongoDB is on the same machine
-const dbName = '/musiconlysbb'; 
+const url = 'mongodb://localhost:27017/musiconlysbb'; // default URL if MongoDB is on the same machine
 
-mongoose.connect(url+dbName)
+mongoose.connect(url)
 .then(()=>{
     console.log("mongoDB connected");
 }).catch(err =>{
