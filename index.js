@@ -1,19 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
-
 const cors = require('cors');
-
-
-
 
 const app = express();
 
 app.use(cors());
 
-// connection
-// mongodb://localhost:27017/
 
-const url = 'mongodb://localhost:27017/musiconlysbb'; // default URL if MongoDB is on the same machine
+
+const url = 'mongodb+srv://krrishksd612470:mo6xvPNhjeH69RaI@clusterkrrish.k3mfc.mongodb.net/listenonlydb'; // default URL if MongoDB is on the same machine
 
 mongoose.connect(url)
 .then(()=>{
@@ -21,9 +16,6 @@ mongoose.connect(url)
 }).catch(err =>{
     console.log("Mongo error");
 });
-
-
-
 // Schema
 const songSchema = new mongoose.Schema({
     title:{
